@@ -1,0 +1,36 @@
+###
+POST {{host}}/api/v1/open/registration
+Content-Type: application/json
+
+{
+  "name":"name",
+  "lastname":"lastname",
+  "username":"username",
+  "email":"email@gmail.com",
+  "password":"password",
+  "repassword":"password"
+}
+
+###
+POST {{host}}/api/v1/open/registration
+Content-Type: application/json
+
+{
+  "name":"name",
+  "lastname":"lastname",
+  "username":"username2000",
+  "email":"email4@gmail.com",
+  "password":"password",
+  "repassword":"password"
+}
+
+###
+POST{{host}}/api/v1/open/login
+Content-Type: application/json
+
+{
+  "email":"email4@gmail.com",
+  "password":"password"
+}
+
+

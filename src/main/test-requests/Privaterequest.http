@@ -1,0 +1,21 @@
+POST{{host}}/api/v1/private/chat
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTEwOTA4LCJleHAiOjE2MTcxMTQ1MDh9.FGDHHO4kQ8wLtNXIU0vhKNxHxQCGe_6t9O9W7Tv-hTY
+
+{
+  "reciver":"email1@gmail.com",
+  "message":"message"
+
+}
+
+###
+POST{{host}}/api/v1/private/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTEwOTA4LCJleHAiOjE2MTcxMTQ1MDh9.FGDHHO4kQ8wLtNXIU0vhKNxHxQCGe_6t9O9W7Tv-hTY
+
+###
+POST{{host}}/api/v1/private/me/notification
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMTM0NjQsImV4cCI6MTYxNzExNzA2NH0.K7PKxYSWcJvLzS49ulse-_O-Sesz11FjsRG5j4c2SDY
+
+
