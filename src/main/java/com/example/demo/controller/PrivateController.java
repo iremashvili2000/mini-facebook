@@ -47,6 +47,30 @@ public class PrivateController {
       return  userService.getNotificationList(user);
     }
 
+    @RequestMapping(value = "/chat/sent/messages",method = RequestMethod.POST)
+    public List<Message> sentMessage(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        return userService.sentMessages(user);
+    }
+
+    @RequestMapping(value = "/chat/recive/messages",method = RequestMethod.POST)
+    public List<Message> reciveMessages(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        return userService.recivesMessages(user);
+    }
+    @RequestMapping(value = "/chat/recive/messages/deleteall",method = RequestMethod.POST)
+    public List<Message> deleterecivMessages(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+      return  userService.deletereciveMessages(user);
+
+    }
+
+    @RequestMapping(value = "/chat/sent/messages/deleteall",method = RequestMethod.POST)
+    public List<Message> deleteSentMessages(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        return userService.deleteSentMessages(user);
+    }
+
 
 
 

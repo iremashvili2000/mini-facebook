@@ -106,4 +106,39 @@ public class UserServiceImpl implements UserService{
         return notificationList;
     }
 
+    @Override
+    public List<Message> sentMessages(User user) {
+      List<Message>messageList=user.getSender();
+      if(messageList.isEmpty()){
+          throw new NotFoundException("messages is empty");
+
+      }
+      return messageList;
+    }
+
+    @Override
+    public List<Message> recivesMessages(User user) {
+        List<Message>messageList=user.getReciver();
+        if(messageList.isEmpty()){
+            throw new NotFoundException("messages is empty");
+        }
+        return messageList;
+    }
+
+    @Override
+    public List<Message> deletereciveMessages(User user) {
+        List<Message> messageList=new ArrayList<Message>();
+        user.setReciver(messageList);
+        userRepository.save(user);
+        return user.getReciver();
+    }
+
+    @Override
+    public List<Message> deleteSentMessages(User user) {
+        List<Message>messageList=new ArrayList<Message>();
+        user.setSender(messageList);
+        userRepository.save(user);
+        return user.getReciver();
+    }
+
 }

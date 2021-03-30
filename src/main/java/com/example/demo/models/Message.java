@@ -15,11 +15,10 @@ public class Message extends Father {
     private String message;
     @JsonIgnore
     private String messageid;
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private User sender;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private User reciver;
 
     public String getMessage() {

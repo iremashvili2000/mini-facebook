@@ -1,9 +1,9 @@
 POST{{host}}/api/v1/private/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTEwOTA4LCJleHAiOjE2MTcxMTQ1MDh9.FGDHHO4kQ8wLtNXIU0vhKNxHxQCGe_6t9O9W7Tv-hTY
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwxQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMUBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjUyNDIsImV4cCI6MTYxNzEyODg0Mn0.GTjUkdwFnLQimD1x3d5-haUOxK9A51WVKJsnENe8FJs
 
 {
-  "reciver":"email1@gmail.com",
+  "reciver":"email2@gmail.com",
   "message":"message"
 
 }
@@ -11,11 +11,32 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 ###
 POST{{host}}/api/v1/private/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTEwOTA4LCJleHAiOjE2MTcxMTQ1MDh9.FGDHHO4kQ8wLtNXIU0vhKNxHxQCGe_6t9O9W7Tv-hTY
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwxQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMUBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjUyNDIsImV4cCI6MTYxNzEyODg0Mn0.GTjUkdwFnLQimD1x3d5-haUOxK9A51WVKJsnENe8FJs
 
 ###
 POST{{host}}/api/v1/private/me/notification
 Content-Type: application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMTM0NjQsImV4cCI6MTYxNzExNzA2NH0.K7PKxYSWcJvLzS49ulse-_O-Sesz11FjsRG5j4c2SDY
 
+###
+POST{{host}}/api/v1/private/chat/sent/messages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjk3NDYsImV4cCI6MTYxNzEzMzM0Nn0.QjjNhU7SUzVXfG2kAtXaq1ynFbp5u_EfpWA2kKS7F1w
+
+
+###
+POST{{host}}/api/v1/private/chat/recive/messages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjk3NDYsImV4cCI6MTYxNzEzMzM0Nn0.QjjNhU7SUzVXfG2kAtXaq1ynFbp5u_EfpWA2kKS7F1w
+
+###
+POST{{host}}/api/v1/private/chat/recive/messages/deleteall
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjg2MDIsImV4cCI6MTYxNzEzMjIwMn0.9o3c7KeevXLKQaCn44JARMLFO_Lb4nZnUR8jBbVHTwE
+
+
+###
+POST{{host}}/api/v1/private//chat/sent/messages/deleteall
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjg2MDIsImV4cCI6MTYxNzEzMjIwMn0.9o3c7KeevXLKQaCn44JARMLFO_Lb4nZnUR8jBbVHTwE
 
