@@ -1,43 +1,39 @@
-package com.example.demo.models;
+package com.example.demo.models.user;
 
 import com.example.demo.models.father.Father;
-import com.example.demo.models.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-@Table(name="message")
-public class Message extends Father {
-
-    private String message;
-    @JsonIgnore
-    private String messageid;
+@Table(name = "friendrequests")
+public class FriendRequests extends Father {
+    private boolean request;
 
     private Date created_at;
+
+    private boolean reciv;
+
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private User sender;
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private User reciver;
 
-    public String getMessage() {
-        return message;
+    public boolean isRequest() {
+        return request;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public boolean isReciv() {
+        return reciv;
     }
 
-    public String getMessageid() {
-        return messageid;
+    public void setReciv(boolean reciv) {
+        this.reciv = reciv;
     }
 
-    public void setMessageid(String messageid) {
-        this.messageid = messageid;
+    public void setRequest(boolean request) {
+        this.request = request;
     }
 
     public User getSender() {

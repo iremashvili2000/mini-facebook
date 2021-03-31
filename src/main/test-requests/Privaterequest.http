@@ -1,33 +1,33 @@
 POST{{host}}/api/v1/private/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwxQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMUBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjUyNDIsImV4cCI6MTYxNzEyODg0Mn0.GTjUkdwFnLQimD1x3d5-haUOxK9A51WVKJsnENe8FJs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTgwNTQxLCJleHAiOjE2MTcxODQxNDF9.AjX7gc7EE9HdCzU9AH4FXPVyFG1MQpvP5N490zjqXcY
 
 {
-  "reciver":"email2@gmail.com",
-  "message":"message"
+  "reciver":"email4@gmail.com",
+  "message":"messagdase"
 
 }
 
 ###
 POST{{host}}/api/v1/private/me
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwxQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMUBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjUyNDIsImV4cCI6MTYxNzEyODg0Mn0.GTjUkdwFnLQimD1x3d5-haUOxK9A51WVKJsnENe8FJs
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxODI2NDcsImV4cCI6MTYxNzE4NjI0N30.9hxfswtESpLMyo7_4svBwIbLHC3GiBxxMTOe9FpvXLs
 
 ###
 POST{{host}}/api/v1/private/me/notification
 Content-Type: application/json
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMTM0NjQsImV4cCI6MTYxNzExNzA2NH0.K7PKxYSWcJvLzS49ulse-_O-Sesz11FjsRG5j4c2SDY
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
 
 ###
 POST{{host}}/api/v1/private/chat/sent/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjk3NDYsImV4cCI6MTYxNzEzMzM0Nn0.QjjNhU7SUzVXfG2kAtXaq1ynFbp5u_EfpWA2kKS7F1w
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
 
 
 ###
 POST{{host}}/api/v1/private/chat/recive/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjk3NDYsImV4cCI6MTYxNzEzMzM0Nn0.QjjNhU7SUzVXfG2kAtXaq1ynFbp5u_EfpWA2kKS7F1w
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
 
 ###
 POST{{host}}/api/v1/private/chat/recive/messages/deleteall
@@ -36,7 +36,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsI
 
 
 ###
-POST{{host}}/api/v1/private//chat/sent/messages/deleteall
+POST{{host}}/api/v1/private/chat/sent/messages/deleteall
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjg2MDIsImV4cCI6MTYxNzEzMjIwMn0.9o3c7KeevXLKQaCn44JARMLFO_Lb4nZnUR8jBbVHTwE
 
+###
+POST{{host}}/api/v1/private/chat/sent/messages/97
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
+
+###
+POST{{host}}/api/v1/private/friend/send/request
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxODY4NzYsImV4cCI6MTYxNzE5MDQ3Nn0.3AjTg0bj0C5fyBZCeaE60SOk_ZmhcpGtO9zyDp-Hbs8
+
+
+{
+  "username":"email@gmail.com"
+}
+
+###
+POST{{host}}/api/v1/private/friend/request/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTg2OTMwLCJleHAiOjE2MTcxOTA1MzB9.rR3mAuRivsZDrVGeWIz-UVtlRLGpvFzewUKtP5548CQ
+
+###
+POST{{host}}/api/v1/private/friend/recive/add/121
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTg2OTMwLCJleHAiOjE2MTcxOTA1MzB9.rR3mAuRivsZDrVGeWIz-UVtlRLGpvFzewUKtP5548CQ
+
+
+###
+POST{{host}}

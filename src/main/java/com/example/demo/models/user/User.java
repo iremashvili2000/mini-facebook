@@ -5,12 +5,12 @@ import com.example.demo.models.Notification;
 import com.example.demo.models.father.Father;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
-import org.hibernate.validator.constraints.Email;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -36,9 +36,11 @@ public class User extends Father implements UserDetails {
     @JsonIgnore
     private String password;
     @Column(name="created_at")
+    @JsonIgnore
     private Date created_at;
     @Column(name = "ROLE")
     @NotNull
+    @JsonIgnore
     private String role;
 
     @OneToMany(
@@ -80,6 +82,17 @@ public class User extends Father implements UserDetails {
  @JsonIgnore
 private List<Message> reciver;
 
+ @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+ @JsonIgnore
+ private List<User> friends;
+
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
 
     public List<Message> getReciver() {
         return reciver;
@@ -181,6 +194,7 @@ private List<Message> reciver;
     }
 
     @Override
+    @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
         String ROLE_PREFIX="ROLE_";
@@ -197,22 +211,22 @@ private List<Message> reciver;
     public String getUsername() {
         return email;
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
         return true;

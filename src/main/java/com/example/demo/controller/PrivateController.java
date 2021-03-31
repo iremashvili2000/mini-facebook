@@ -3,15 +3,14 @@ package com.example.demo.controller;
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
 import com.example.demo.models.requests.SendMessage;
+import com.example.demo.models.response.SendRequest;
+import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -71,9 +70,33 @@ public class PrivateController {
         return userService.deleteSentMessages(user);
     }
 
+    @RequestMapping(value = "/chat/sent/messages/{num}",method = RequestMethod.POST)
+    public void deleteSentMess(@AuthenticationPrincipal UserDetails userDetails, @PathVariable(name="num")Long number){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+         userService.deletesentMessage(number,user);
+    }
+    @RequestMapping(value = "/chat/recive/messages/{num}",method = RequestMethod.POST)
+    public void deleteReciveMess(@AuthenticationPrincipal UserDetails userDetails, @PathVariable(name="num")Long number){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+        userService.deletereciveMessage(number,user);
+    }
+    @RequestMapping(value = "/friend/send/request",method = RequestMethod.POST)
+    public Notification sendRequest(@AuthenticationPrincipal UserDetails userDetails, @Valid @RequestBody SendRequest sendRequest){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+        return userService.sendRequest(user,sendRequest);
+    }
 
+    @RequestMapping(value = "/friend/request/list",method = RequestMethod.POST)
+    public List<FriendRequests> friendRequestList(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        return userService.friendRequest(user);
+    }
 
-
+    @RequestMapping(value = "/friend/recive/add/{num}",method = RequestMethod.POST)
+    public User getnewFriend(@AuthenticationPrincipal UserDetails userDetails,@PathVariable(name="num")Long num){
+      User user=(User)userRepository.findByEmail(userDetails.getUsername());
+      return userService.reciveFriendRequest(user,num);
+    }
 
 
 

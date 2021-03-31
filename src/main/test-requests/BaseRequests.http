@@ -29,7 +29,7 @@ POST{{host}}/api/v1/open/login
 Content-Type: application/json
 
 {
-  "email":"email2@gmail.com",
+  "email":"email@gmail.com",
   "password":"password"
 }
 
