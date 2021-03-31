@@ -37,4 +37,6 @@ public interface UserService extends UserDetailsService {
     List<FriendRequests> friendRequest(User user);
 
     User reciveFriendRequest(User user, Long num);
+
+    void deleteFriend(User user, String email);
 }

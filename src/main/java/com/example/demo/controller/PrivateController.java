@@ -98,6 +98,12 @@ public class PrivateController {
       return userService.reciveFriendRequest(user,num);
     }
 
+    @RequestMapping(value = "/friend/delete/user/{email}",method = RequestMethod.POST)
+    public void deleteuserforFriendList(@AuthenticationPrincipal UserDetails userDetails,@PathVariable(name="email")String email){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        userService.deleteFriend(user,email);
+    }
+
 
 
 }

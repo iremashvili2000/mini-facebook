@@ -16,10 +16,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
 import java.time.Clock;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
@@ -57,7 +59,7 @@ public class UserServiceImpl implements UserService{
             throw new BadDataException("dont found");
         }
         Message message=new Message();
-        message.setMessage(sendMessage.getMessage());
+        message.setMessage(Base64.getEncoder().encodeToString(sendMessage.getMessage().getBytes(StandardCharsets.UTF_8)));
         message.setCreated_at(new Date());
         //
         message.setMessageid("daxkx");
@@ -114,16 +116,31 @@ public class UserServiceImpl implements UserService{
           throw new NotFoundException("messages is empty");
 
       }
-      return messageList;
+      List<Message>messages=new ArrayList<Message>();
+      for(int i=0;i<messageList.size();i++){
+          byte[] decodedBytes=Base64.getDecoder().decode(messageList.get(i).getMessage());
+          String decodedString=new String(decodedBytes);
+          messages.add(messageList.get(i));
+          messages.get(i).setMessage(decodedString);
+      }
+      return messages;
     }
 
     @Override
     public List<Message> recivesMessages(User user) {
         List<Message>messageList=user.getReciver();
+        List<Message>messages=new ArrayList<Message>();
+        for(int i=0;i<messageList.size();i++){
+            byte[] decoderbytes=Base64.getDecoder().decode(messageList.get(i).getMessage());
+            String decoderstring=new String(decoderbytes);
+            messages.add(messageList.get(i));
+            messages.get(i).setMessage(decoderstring);
+        }
+
         if(messageList.isEmpty()){
             throw new NotFoundException("messages is empty");
         }
-        return messageList;
+        return messages;
     }
 
     @Override
@@ -252,6 +269,27 @@ public class UserServiceImpl implements UserService{
             }
         }
         throw new NotFoundException("friendrequest not found");
+    }
+
+    @Override
+    public void deleteFriend(User user, String email) {
+            List<User> userList=user.getFriends();
+            if(userList.isEmpty()){
+                throw new NotFoundException("you have not friend");
+            }
+            User user1=(User)userRepository.findByEmail(email);
+
+            List<User>users=new ArrayList<User>();
+            for(int i=0;i<userList.size();i++){
+                if(!userList.get(i).equals(user1)){
+                    users.add(userList.get(i));
+                }
+            }
+            if(users.size()==userList.size()){
+                throw new NotFoundException("username dont found");
+            }
+            user.setFriends(users);
+            userRepository.save(user);
     }
 
 

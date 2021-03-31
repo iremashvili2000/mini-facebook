@@ -1,10 +1,10 @@
 POST{{host}}/api/v1/private/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTgwNTQxLCJleHAiOjE2MTcxODQxNDF9.AjX7gc7EE9HdCzU9AH4FXPVyFG1MQpvP5N490zjqXcY
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTkxNjE5LCJleHAiOjE2MTcxOTUyMTl9._ACF6fDP2o3p8IduBfPAdKne6XddKdnGZJy7iPDr0pg
 
 {
   "reciver":"email4@gmail.com",
-  "message":"messagdase"
+  "message":"goga magari programistia"
 
 }
 
@@ -21,13 +21,13 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3
 ###
 POST{{host}}/api/v1/private/chat/sent/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTkyMjExLCJleHAiOjE2MTcxOTU4MTF9.aGJWDIQ53HPTTOedjSMQ_2zMexgwXAd-9VHYIQ7eKpo
 
 
 ###
 POST{{host}}/api/v1/private/chat/recive/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTc1NjIzLCJleHAiOjE2MTcxNzkyMjN9.pe70-_pbzWcJUb2VsnAwYDfkMa4pHi-yE4IrZ-C1bb0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxOTE3MzgsImV4cCI6MTYxNzE5NTMzOH0.nQ_euDA_a-UUI04XFrkv-x5EWgK2UnYU4eccvg0eWHk
 
 ###
 POST{{host}}/api/v1/private/chat/recive/messages/deleteall
