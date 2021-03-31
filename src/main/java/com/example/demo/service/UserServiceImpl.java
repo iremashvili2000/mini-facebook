@@ -4,6 +4,7 @@ import com.example.demo.exception.BadDataException;
 import com.example.demo.exception.NotFoundException;
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
+import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
@@ -14,6 +15,7 @@ import com.example.demo.repository.NotificationRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -31,6 +33,7 @@ public class UserServiceImpl implements UserService{
     private final MessageRepository messageRepository;
     private final FriendRequestRepository friendRequestRepository;
     private final NotificationRepository notificationRepository;
+
 
 
     public UserServiceImpl(UserRepository userRepository, MessageRepository messageRepository, FriendRequestRepository friendRequestRepository, NotificationRepository notificationRepository) {
@@ -291,6 +294,10 @@ public class UserServiceImpl implements UserService{
             user.setFriends(users);
             userRepository.save(user);
     }
+
+
+
+
 
 
 }

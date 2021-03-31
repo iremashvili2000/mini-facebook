@@ -2,11 +2,13 @@ package com.example.demo.controller;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
+import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.Service;
 import com.example.demo.service.UserService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,10 +22,12 @@ import java.util.List;
 public class PrivateController {
     private final UserRepository userRepository;
     private final UserService userService;
+    private final Service service;
 
-    public PrivateController(UserRepository userRepository, UserService userService) {
+    public PrivateController(UserRepository userRepository, UserService userService, Service service) {
         this.userRepository = userRepository;
         this.userService = userService;
+        this.service = service;
     }
 
 
@@ -103,6 +107,13 @@ public class PrivateController {
         User user=(User)userRepository.findByEmail(userDetails.getUsername());
         userService.deleteFriend(user,email);
     }
+
+    @RequestMapping(value = "/change/password",method = RequestMethod.POST)
+    public void changePassword(@AuthenticationPrincipal UserDetails userDetails,@Valid @RequestBody ChangePassword changePassword){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        service.changePassword(user,changePassword);
+    }
+
 
 
 

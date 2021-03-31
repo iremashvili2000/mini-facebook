@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
+import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
@@ -39,4 +40,6 @@ public interface UserService extends UserDetailsService {
     User reciveFriendRequest(User user, Long num);
 
     void deleteFriend(User user, String email);
+
+
 }

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.exception.BadDataException;
 import com.example.demo.models.Notification;
+import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.RegistrationUser;
 import com.example.demo.models.user.User;
 import com.example.demo.repository.NotificationRepository;
@@ -59,5 +60,20 @@ public class ServiceImpl implements Service{
 
 
         return user;
+    }
+
+    @Override
+    public void changePassword(User user, ChangePassword changePassword) {
+        System.out.println(changePassword.getPass()+" "+changePassword.getPassword());
+        if(!passwordEncoder.matches(changePassword.getPassword(), user.getPassword())){
+            throw new BadDataException("password is not correct");
+        }
+        if(!changePassword.getPass().equals(changePassword.getRepass())){
+            throw new BadDataException("passwords is not equals");
+        }
+
+        user.setPassword(passwordEncoder.encode(changePassword.getPass()));
+        userRepository.save(user);
+        System.out.println("morchaa");
     }
 }

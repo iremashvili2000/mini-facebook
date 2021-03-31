@@ -62,6 +62,7 @@ public class OpenController {
         if(!passwordEncoder.matches(login.getPassword(), user.getPassword())){
             throw new BadDataException("password or username is not correct");
         }
+
         List<String> roles=new ArrayList<>();
         roles.add(user.getRole());
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getUsername(),login.getPassword(),getGrantedAuthorities(roles));

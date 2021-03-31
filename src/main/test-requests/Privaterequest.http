@@ -8,6 +8,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 
 }
 
+
 ###
 POST{{host}}/api/v1/private/me
 Content-Type: application/json
@@ -29,10 +30,13 @@ POST{{host}}/api/v1/private/chat/recive/messages
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxOTE3MzgsImV4cCI6MTYxNzE5NTMzOH0.nQ_euDA_a-UUI04XFrkv-x5EWgK2UnYU4eccvg0eWHk
 
+
+
 ###
 POST{{host}}/api/v1/private/chat/recive/messages/deleteall
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMkBnbWFpbC5jb20iLCJpYXQiOjE2MTcxMjg2MDIsImV4cCI6MTYxNzEzMjIwMn0.9o3c7KeevXLKQaCn44JARMLFO_Lb4nZnUR8jBbVHTwE
+
 
 
 ###
@@ -55,10 +59,12 @@ Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIs
   "username":"email@gmail.com"
 }
 
+
 ###
 POST{{host}}/api/v1/private/friend/request/list
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTg2OTMwLCJleHAiOjE2MTcxOTA1MzB9.rR3mAuRivsZDrVGeWIz-UVtlRLGpvFzewUKtP5548CQ
+
 
 ###
 POST{{host}}/api/v1/private/friend/recive/add/121
@@ -67,4 +73,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 
 
 ###
-POST{{host}}
+POST{{host}}/api/v1/private/change/password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MjExODgzLCJleHAiOjE2MTcyMTU0ODN9.XCzHMucRQ2zCC80HbgOr-Ci6kmBEG8iFnAz_k3zzXTA
+
+{
+  "password":"password",
+  "pass":"pass",
+  "repass":"pass"
+}
