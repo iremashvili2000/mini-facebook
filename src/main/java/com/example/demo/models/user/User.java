@@ -16,7 +16,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-
 @Entity
 @Table(name="users")
 public class User extends Father implements UserDetails {
@@ -50,6 +49,14 @@ public class User extends Father implements UserDetails {
     )
     @JsonIgnore
     protected List<Notification> notifications;
+
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JsonIgnore
+    protected List<POST> Posts;
     @OneToOne(
             mappedBy = "user",
             cascade = CascadeType.ALL,
@@ -85,6 +92,14 @@ private List<Message> reciver;
  @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
  @JsonIgnore
  private List<User> friends;
+
+    public List<POST> getPosts() {
+        return Posts;
+    }
+
+    public void setPosts(List<POST> posts) {
+        Posts = posts;
+    }
 
     public List<User> getFriends() {
         return friends;

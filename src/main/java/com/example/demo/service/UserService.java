@@ -5,11 +5,9 @@ import com.example.demo.models.Notification;
 import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.requests.UpdateAddress;
+import com.example.demo.models.requests.WritePost;
 import com.example.demo.models.response.SendRequest;
-import com.example.demo.models.user.FriendRequests;
-import com.example.demo.models.user.User;
-import com.example.demo.models.user.UserInfo;
-import com.example.demo.models.user.Useraddress;
+import com.example.demo.models.user.*;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -50,4 +48,6 @@ public interface UserService extends UserDetailsService {
     Useraddress updateAddress(User user, UpdateAddress updateAddress);
 
     List<User> getFriendlist(User user);
+
+    POST writePost(User user, WritePost writePost);
 }

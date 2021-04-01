@@ -2,15 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
-import com.example.demo.models.requests.ChangePassword;
-import com.example.demo.models.requests.ChangeUserInfo;
-import com.example.demo.models.requests.SendMessage;
-import com.example.demo.models.requests.UpdateAddress;
+import com.example.demo.models.requests.*;
 import com.example.demo.models.response.SendRequest;
-import com.example.demo.models.user.FriendRequests;
-import com.example.demo.models.user.User;
-import com.example.demo.models.user.UserInfo;
-import com.example.demo.models.user.Useraddress;
+import com.example.demo.models.user.*;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.Service;
 import com.example.demo.service.UserService;
@@ -140,6 +134,12 @@ public class PrivateController {
     public List<User> friendlist(@AuthenticationPrincipal UserDetails userDetails){
         User user=(User)userRepository.findByEmail(userDetails.getUsername());
          return  userService.getFriendlist(user);
+    }
+
+    @RequestMapping(value = "/write/post",method = RequestMethod.POST)
+    public POST writePost(@AuthenticationPrincipal UserDetails userDetails, @Valid @RequestBody WritePost writePost){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+        return userService.writePost(user,writePost);
     }
 
 

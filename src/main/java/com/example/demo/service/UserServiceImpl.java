@@ -6,11 +6,9 @@ import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.requests.UpdateAddress;
+import com.example.demo.models.requests.WritePost;
 import com.example.demo.models.response.SendRequest;
-import com.example.demo.models.user.FriendRequests;
-import com.example.demo.models.user.User;
-import com.example.demo.models.user.UserInfo;
-import com.example.demo.models.user.Useraddress;
+import com.example.demo.models.user.*;
 import com.example.demo.repository.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -32,15 +30,17 @@ public class UserServiceImpl implements UserService{
     private final FriendRequestRepository friendRequestRepository;
     private final NotificationRepository notificationRepository;
     private final UserAddressRepository userAddressRepository;
+    private final PostRepository postRepository;
 
 
 
-    public UserServiceImpl(UserRepository userRepository, MessageRepository messageRepository, FriendRequestRepository friendRequestRepository, NotificationRepository notificationRepository, UserAddressRepository userAddressRepository) {
+    public UserServiceImpl(UserRepository userRepository, MessageRepository messageRepository, FriendRequestRepository friendRequestRepository, NotificationRepository notificationRepository, UserAddressRepository userAddressRepository, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.messageRepository = messageRepository;
         this.friendRequestRepository = friendRequestRepository;
         this.notificationRepository = notificationRepository;
         this.userAddressRepository = userAddressRepository;
+        this.postRepository = postRepository;
     }
 
     @Override
@@ -332,6 +332,17 @@ public class UserServiceImpl implements UserService{
         }
         return friends;
     }
+
+    @Override
+    public POST writePost(User user, WritePost writePost) {
+        POST post=new POST();
+        post.setPost(writePost.getPost());
+        post.setPriv(writePost.isInfrends());
+        post.setUser(user);
+        postRepository.save(post);
+        return post;
+    }
+
 
 
 }

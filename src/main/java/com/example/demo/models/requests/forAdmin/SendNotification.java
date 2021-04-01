@@ -1,4 +1,4 @@
-package com.example.demo.models.requests;
+package com.example.demo.models.requests.forAdmin;
 
 import java.util.Date;
 
