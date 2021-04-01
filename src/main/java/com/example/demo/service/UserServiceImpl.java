@@ -254,20 +254,10 @@ public class UserServiceImpl implements UserService{
              if(!userList.contains(friendRequests.get(j).getSender())){
                     userList.add(friendRequests.get(j).getSender());
              }
-             userList.add(friendRequests.get(j).getSender());
              user.setFriends(userList);
                 userRepository.save(user);
-                userList=null;
+
              User user1=friendRequests.get(j).getSender();
-             userList=user1.getFriends();
-             if(userList.isEmpty()){
-                    userList=new ArrayList<User>();
-             }
-             if(!userList.contains(user)){
-                 userList.add(user);
-             }
-             user1.setFriends(userList);
-             userRepository.save(user1);
              return user1;
             }
         }
@@ -343,6 +333,34 @@ public class UserServiceImpl implements UserService{
         return post;
     }
 
+    @Override
+    public List<POST> seeYourPost(User user) {
+        List<POST> postList=user.getPosts();
+        if(postList.isEmpty()){
+            throw new NotFoundException("posts not found");
+        }
+        return postList;
+    }
+
+    @Override
+    public List<POST> seeProfile(User user,String email) {
+        User user1=(User)userRepository.findByEmail(email);
+        int k=0;
+        if(user.getFriends().contains(user1)){
+            k++;
+        }
+        List<POST>postList=user1.getPosts();
+        if(postList.isEmpty()){
+            throw new NotFoundException("posts not found");
+        }
+        List<POST>posts=new ArrayList<POST>();
+        for(int i=0;i< postList.size();i++){
+            if(!postList.get(i).isPriv() || k==1){
+                posts.add(postList.get(i));
+            }
+        }
+        return posts;
+    }
 
 
 }

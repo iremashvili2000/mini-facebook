@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
-import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.requests.UpdateAddress;
 import com.example.demo.models.requests.WritePost;
@@ -50,4 +49,8 @@ public interface UserService extends UserDetailsService {
     List<User> getFriendlist(User user);
 
     POST writePost(User user, WritePost writePost);
+
+    List<POST> seeYourPost(User user);
+
+    List<POST> seeProfile(User user, String email);
 }

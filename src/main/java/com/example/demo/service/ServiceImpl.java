@@ -92,7 +92,6 @@ public class ServiceImpl implements Service{
             throw new BadDataException("password is not correct");
         }
         user.setEmail(changeUserInfo.getEmail());
-        user.setUsername(changeUserInfo.getEmail());
         userRepository.save(user);
         UserInfo userInfo=user.getUserInfo();
         if(userInfo==null){

@@ -44,9 +44,6 @@ public class OpenController {
     }
 
 
-    //@RequestMapping(value = "/api/v1/open/chat",method = RequestMethod.POST)
-    //public List<Message> getsendMessages( @RequestBody SendRequest sendRequest){
-  //  }
 
     @RequestMapping(value = "/api/v1/open/registration",method = RequestMethod.POST)
     public User registration(@Valid @RequestBody RegistrationUser registration){

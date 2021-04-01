@@ -64,6 +64,7 @@ public class User extends Father implements UserDetails {
     )
     @JsonIgnore
     private Useraddress address;
+
     @OneToOne(
             mappedBy = "user",
             cascade = CascadeType.ALL,
@@ -80,14 +81,13 @@ public class User extends Father implements UserDetails {
     @JsonIgnore
     private UserSecurity userSecurity;
 
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Message> sender;
 
  @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
  @JsonIgnore
- private List<Message> sender;
-
- @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
- @JsonIgnore
-private List<Message> reciver;
+ private List<Message> reciver;
 
  @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
  @JsonIgnore
@@ -223,6 +223,7 @@ private List<Message> reciver;
     }
 
     @Override
+    @JsonIgnore
     public String getUsername() {
         return email;
     }

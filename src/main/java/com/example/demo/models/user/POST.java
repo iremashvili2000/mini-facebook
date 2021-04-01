@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name="post")
 public class POST extends Father {
     private String post;
-    private boolean priv;
+    private boolean priv;//chavasworo
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

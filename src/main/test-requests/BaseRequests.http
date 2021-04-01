@@ -6,7 +6,7 @@ Content-Type: application/json
   "name":"name",
   "lastname":"lastname",
   "username":"username",
-  "email":"email@gmail.com",
+  "email":"email3@gmail.com",
   "password":"password",
   "repassword":"password"
 }
@@ -29,8 +29,10 @@ POST{{host}}/api/v1/open/login
 Content-Type: application/json
 
 {
+
   "email":"email2000@gmail.com",
   "password":"password"
+
 }
 
 

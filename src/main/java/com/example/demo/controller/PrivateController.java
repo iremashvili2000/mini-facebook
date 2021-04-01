@@ -142,6 +142,18 @@ public class PrivateController {
         return userService.writePost(user,writePost);
     }
 
+    @RequestMapping(value = "/me/see/profile",method = RequestMethod.POST)
+    public List<POST> yourPost(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+       return userService.seeYourPost(user);
+    }
+
+    @RequestMapping(value = "/see/profile/{email}",method = RequestMethod.POST)
+    public List<POST> seeProfile(@AuthenticationPrincipal UserDetails userDetails,@PathVariable(name="email")String email){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+       return userService.seeProfile(user,email);
+    }
+
 
 
 

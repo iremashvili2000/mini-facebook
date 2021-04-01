@@ -11,7 +11,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 ###
 POST{{host}}/api/v1/private/me
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpbC5jb20iLCJzdWIiOiJlbWFpbDIwMGp1anUwQGdtYWlsLmNvbSIsImlhdCI6MTYxNzI3NDI4MSwiZXhwIjoxNjE3Mjc3ODgxfQ.NeTTPhIhma-bK4BMDOoWnnSs1aidGbXyY5iwNGLJd-c
 
 ###
 POST{{host}}/api/v1/private/me/notification
@@ -51,11 +51,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 ###
 POST{{host}}/api/v1/private/friend/send/request
 Content-Type: application/json
-Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxODY4NzYsImV4cCI6MTYxNzE5MDQ3Nn0.3AjTg0bj0C5fyBZCeaE60SOk_ZmhcpGtO9zyDp-Hbs8
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpbC5jb20iLCJzdWIiOiJlbWFpbDIwMGp1anUwQGdtYWlsLmNvbSIsImlhdCI6MTYxNzI3NDI4MSwiZXhwIjoxNjE3Mjc3ODgxfQ.NeTTPhIhma-bK4BMDOoWnnSs1aidGbXyY5iwNGLJd-c
 
 
 {
-  "username":"email@gmail.com"
+  "username":"email2000@gmail.com"
 }
 
 
@@ -66,9 +66,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 
 
 ###
-POST{{host}}/api/v1/private/friend/recive/add/121
+POST{{host}}/api/v1/private/friend/recive/add/146
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTg2OTMwLCJleHAiOjE2MTcxOTA1MzB9.rR3mAuRivsZDrVGeWIz-UVtlRLGpvFzewUKtP5548CQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzQ3NjMsImV4cCI6MTYxNzI3ODM2M30.RvQlKA1Q4TjDVqvlnT39PZTCeo72R5NpvsST3XMY1CE
 
 
 ###
@@ -85,12 +85,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 ###
 POST{{host}}/api/v1/private/update/info
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MjYzMzU0LCJleHAiOjE2MTcyNjY5NTR9.60kvy2NJrTtgZq8SJbpTAVeTXv8mo04lAMNXdskz1dE
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwzQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsM0BnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzQxNjEsImV4cCI6MTYxNzI3Nzc2MX0.vRWY8X_74zsYnifeJHKb0NcAgoVahcB7nDeFCqEu3C4
 
 {
 
   "password":"password",
-  "email":"email2000@gmail.com",
+  "email":"email200juju0@gmail.com",
   "gender":"male",
   "birthday":"2009-12-31"
 }
@@ -98,7 +98,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 ###
 POST{{host}}/api/v1/private/see/info
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpbC5jb20iLCJzdWIiOiJlbWFpbDIwMGp1anUwQGdtYWlsLmNvbSIsImlhdCI6MTYxNzI3NDI4MSwiZXhwIjoxNjE3Mjc3ODgxfQ.NeTTPhIhma-bK4BMDOoWnnSs1aidGbXyY5iwNGLJd-c
 
 ###
 POST{{host}}/api/v1/private/update/address/info
@@ -117,15 +117,26 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvb
 ###
 POST{{host}}/api/v1/private/friend/list
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjc1MTMsImV4cCI6MTYxNzI3MTExM30.i5JqDnL32hkc7pe8_6g4VGQ_BYRiw88_N9LR3W6vMO0
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzcwODYsImV4cCI6MTYxNzI4MDY4Nn0.W75k1GBaakMyXAHZQtXjseYl8kO0k0UwxdLzeNtG9es
 
 ###
 POST{{host}}/api/v1/private/write/post
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjc1MTMsImV4cCI6MTYxNzI3MTExM30.i5JqDnL32hkc7pe8_6g4VGQ_BYRiw88_N9LR3W6vMO0
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpbC5jb20iLCJzdWIiOiJlbWFpbDIwMGp1anUwQGdtYWlsLmNvbSIsImlhdCI6MTYxNzI3NzAzNCwiZXhwIjoxNjE3MjgwNjM0fQ.P5wHK8n8nnyGI250WKofqGfhOLH7y50KAC_2yx-teP0
 
 {
   "post":"post",
   "infrends":true
 
 }
+
+###
+POST {{host}}/api/v1/private/me/see/profile
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzE2MzksImV4cCI6MTYxNzI3NTIzOX0.c0MfemWpemYmOKua3cisDAf_6J5VzehnbC5eHOiQw-M
+
+###
+POST{{host}}/api/v1/private/see/profile/email200juju0@gmail.com
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzcwODYsImV4cCI6MTYxNzI4MDY4Nn0.W75k1GBaakMyXAHZQtXjseYl8kO0k0UwxdLzeNtG9es
+
