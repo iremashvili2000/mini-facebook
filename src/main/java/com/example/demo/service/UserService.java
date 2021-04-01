@@ -4,10 +4,12 @@ import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
 import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
+import com.example.demo.models.requests.UpdateAddress;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
 import com.example.demo.models.user.UserInfo;
+import com.example.demo.models.user.Useraddress;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +46,6 @@ public interface UserService extends UserDetailsService {
 
 
     UserInfo seeInfo(User user);
+
+    Useraddress updateAddress(User user, UpdateAddress updateAddress);
 }

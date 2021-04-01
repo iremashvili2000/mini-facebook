@@ -100,3 +100,16 @@ POST{{host}}/api/v1/private/see/info
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
 
+###
+POST{{host}}/api/v1/private/update/address/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
+
+{
+  "country":"country",
+  "city":"city",
+  "homecity":"homecity",
+  "zipcode":"zipcode",
+  "street":"street"
+
+}

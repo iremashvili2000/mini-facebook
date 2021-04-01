@@ -4,19 +4,16 @@ import com.example.demo.exception.BadDataException;
 import com.example.demo.exception.NotFoundException;
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
-import com.example.demo.models.requests.ChangePassword;
 import com.example.demo.models.requests.SendMessage;
+import com.example.demo.models.requests.UpdateAddress;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
 import com.example.demo.models.user.UserInfo;
-import com.example.demo.repository.FriendRequestRepository;
-import com.example.demo.repository.MessageRepository;
-import com.example.demo.repository.NotificationRepository;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.models.user.Useraddress;
+import com.example.demo.repository.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -34,14 +31,16 @@ public class UserServiceImpl implements UserService{
     private final MessageRepository messageRepository;
     private final FriendRequestRepository friendRequestRepository;
     private final NotificationRepository notificationRepository;
+    private final UserAddressRepository userAddressRepository;
 
 
 
-    public UserServiceImpl(UserRepository userRepository, MessageRepository messageRepository, FriendRequestRepository friendRequestRepository, NotificationRepository notificationRepository) {
+    public UserServiceImpl(UserRepository userRepository, MessageRepository messageRepository, FriendRequestRepository friendRequestRepository, NotificationRepository notificationRepository, UserAddressRepository userAddressRepository) {
         this.userRepository = userRepository;
         this.messageRepository = messageRepository;
         this.friendRequestRepository = friendRequestRepository;
         this.notificationRepository = notificationRepository;
+        this.userAddressRepository = userAddressRepository;
     }
 
     @Override
@@ -303,6 +302,26 @@ public class UserServiceImpl implements UserService{
             throw new NotFoundException("user info is empty");
         }
         return userInfo;
+    }
+
+    @Override
+    public Useraddress updateAddress(User user, UpdateAddress updateAddress) {
+        if(updateAddress.getCity()==null || updateAddress.getCountry()==null || updateAddress.getStreet()==null|| updateAddress.getHomecity()==null || updateAddress.getZipcode()==null){
+            throw new BadDataException("you cant line was empty");
+        }
+        Useraddress useraddress=user.getAddress();
+        if(useraddress==null){
+            useraddress=new Useraddress();
+        }
+
+        useraddress.setUser(user);
+        useraddress.setCity(updateAddress.getCity());
+        useraddress.setCountry(updateAddress.getCountry());
+        useraddress.setHomecity(updateAddress.getHomecity());
+        useraddress.setZipcode(updateAddress.getZipcode());
+        useraddress.setStreet(updateAddress.getStreet());
+        userAddressRepository.save(useraddress);
+        return useraddress;
     }
 
 
