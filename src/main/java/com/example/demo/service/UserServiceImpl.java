@@ -324,5 +324,14 @@ public class UserServiceImpl implements UserService{
         return useraddress;
     }
 
+    @Override
+    public List<User> getFriendlist(User user) {
+        List<User>friends=user.getFriends();
+        if(friends.isEmpty()){
+            throw new NotFoundException("you have not friends");
+        }
+        return friends;
+    }
+
 
 }

@@ -113,3 +113,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvb
   "street":"street"
 
 }
+
+###
+POST{{host}}/api/v1/private/friend/list
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjc1MTMsImV4cCI6MTYxNzI3MTExM30.i5JqDnL32hkc7pe8_6g4VGQ_BYRiw88_N9LR3W6vMO0
+
+###
+

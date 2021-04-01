@@ -136,6 +136,15 @@ public class PrivateController {
       return  userService.updateAddress(user,updateAddress);
     }
 
+    @RequestMapping(value = "/friend/list",method = RequestMethod.POST)
+    public List<User> friendlist(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+         return  userService.getFriendlist(user);
+    }
+
+
+
+
 
 
 

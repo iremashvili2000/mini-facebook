@@ -48,4 +48,6 @@ public interface UserService extends UserDetailsService {
     UserInfo seeInfo(User user);
 
     Useraddress updateAddress(User user, UpdateAddress updateAddress);
+
+    List<User> getFriendlist(User user);
 }
