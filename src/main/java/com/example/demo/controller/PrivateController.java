@@ -3,10 +3,12 @@ package com.example.demo.controller;
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
 import com.example.demo.models.requests.ChangePassword;
+import com.example.demo.models.requests.ChangeUserInfo;
 import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
+import com.example.demo.models.user.UserInfo;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.Service;
 import com.example.demo.service.UserService;
@@ -113,6 +115,20 @@ public class PrivateController {
         User user=(User)userRepository.findByEmail(userDetails.getUsername());
         service.changePassword(user,changePassword);
     }
+
+    @RequestMapping(value = "/update/info",method = RequestMethod.POST)
+    public ChangeUserInfo changeInfo(@AuthenticationPrincipal UserDetails userDetails, @Valid @RequestBody ChangeUserInfo changeUserInfo){
+       User user=(User)userRepository.findByEmail(userDetails.getUsername());
+       return service.changeUserInfo(user,changeUserInfo);
+    }
+
+    @RequestMapping(value = "/see/info",method = RequestMethod.POST)
+    public UserInfo getInfo(@AuthenticationPrincipal UserDetails userDetails){
+        User user=(User)userRepository.findByEmail(userDetails.getUsername());
+       return userService.seeInfo(user);
+    }
+
+
 
 
 

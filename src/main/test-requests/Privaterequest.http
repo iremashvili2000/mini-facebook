@@ -1,6 +1,6 @@
 POST{{host}}/api/v1/private/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MTkxNjE5LCJleHAiOjE2MTcxOTUyMTl9._ACF6fDP2o3p8IduBfPAdKne6XddKdnGZJy7iPDr0pg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MjYxMzQ2LCJleHAiOjE2MTcyNjQ5NDZ9.WRtLIr0l15sDHAtWi1mBtXd_gwoiPefTkyhM6_Wq7wU
 
 {
   "reciver":"email4@gmail.com",
@@ -8,11 +8,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
 
 }
 
-
 ###
 POST{{host}}/api/v1/private/me
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWw0QGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsNEBnbWFpbC5jb20iLCJpYXQiOjE2MTcxODI2NDcsImV4cCI6MTYxNzE4NjI0N30.9hxfswtESpLMyo7_4svBwIbLHC3GiBxxMTOe9FpvXLs
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
 
 ###
 POST{{host}}/api/v1/private/me/notification
@@ -82,3 +81,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic
   "pass":"pass",
   "repass":"pass"
 }
+
+###
+POST{{host}}/api/v1/private/update/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3MjYzMzU0LCJleHAiOjE2MTcyNjY5NTR9.60kvy2NJrTtgZq8SJbpTAVeTXv8mo04lAMNXdskz1dE
+
+{
+
+  "password":"password",
+  "email":"email2000@gmail.com",
+  "gender":"male",
+  "birthday":"2009-12-31"
+}
+
+###
+POST{{host}}/api/v1/private/see/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
+

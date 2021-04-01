@@ -9,6 +9,7 @@ import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
+import com.example.demo.models.user.UserInfo;
 import com.example.demo.repository.FriendRequestRepository;
 import com.example.demo.repository.MessageRepository;
 import com.example.demo.repository.NotificationRepository;
@@ -295,9 +296,14 @@ public class UserServiceImpl implements UserService{
             userRepository.save(user);
     }
 
-
-
-
+    @Override
+    public UserInfo seeInfo(User user) {
+        UserInfo userInfo= user.getUserInfo();
+        if(userInfo==null){
+            throw new NotFoundException("user info is empty");
+        }
+        return userInfo;
+    }
 
 
 }

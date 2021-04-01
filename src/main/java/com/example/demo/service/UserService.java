@@ -7,6 +7,7 @@ import com.example.demo.models.requests.SendMessage;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.FriendRequests;
 import com.example.demo.models.user.User;
+import com.example.demo.models.user.UserInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -42,4 +43,5 @@ public interface UserService extends UserDetailsService {
     void deleteFriend(User user, String email);
 
 
+    UserInfo seeInfo(User user);
 }
