@@ -103,7 +103,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpb
 ###
 POST{{host}}/api/v1/private/update/address/info
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNjM1MTUsImV4cCI6MTYxNzI2NzExNX0.uf4B_2MxUbeznCTY_mkR1dLBOcWl-ZoSR8EDQdPEg3w
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3NDU0MDcxLCJleHAiOjE2MTc0NTc2NzF9.4fq1AQy3vvcTh9W-h8781tlRhfco-FRu1Fwtqffm1RU
 
 {
   "country":"country",
@@ -122,7 +122,7 @@ Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNv
 ###
 POST{{host}}/api/v1/private/write/post
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFpbC5jb20iLCJzdWIiOiJlbWFpbDIwMGp1anUwQGdtYWlsLmNvbSIsImlhdCI6MTYxNzI3NzAzNCwiZXhwIjoxNjE3MjgwNjM0fQ.P5wHK8n8nnyGI250WKofqGfhOLH7y50KAC_2yx-teP0
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3NDU0MDcxLCJleHAiOjE2MTc0NTc2NzF9.4fq1AQy3vvcTh9W-h8781tlRhfco-FRu1Fwtqffm1RU
 
 {
   "post":"post",
@@ -133,10 +133,21 @@ Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDBqdWp1MEBnbWFp
 ###
 POST {{host}}/api/v1/private/me/see/profile
 Content-Type: application/json
-Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzE2MzksImV4cCI6MTYxNzI3NTIzOX0.c0MfemWpemYmOKua3cisDAf_6J5VzehnbC5eHOiQw-M
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3NDU0MDcxLCJleHAiOjE2MTc0NTc2NzF9.4fq1AQy3vvcTh9W-h8781tlRhfco-FRu1Fwtqffm1RU
 
 ###
-POST{{host}}/api/v1/private/see/profile/email200juju0@gmail.com
+POST{{host}}/api/v1/private/see/profile/email@gmail.com
 Content-Type: application/json
-Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWwyMDAwQGdtYWlsLmNvbSIsInN1YiI6ImVtYWlsMjAwMEBnbWFpbC5jb20iLCJpYXQiOjE2MTcyNzcwODYsImV4cCI6MTYxNzI4MDY4Nn0.W75k1GBaakMyXAHZQtXjseYl8kO0k0UwxdLzeNtG9es
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3NDU0MDcxLCJleHAiOjE2MTc0NTc2NzF9.4fq1AQy3vvcTh9W-h8781tlRhfco-FRu1Fwtqffm1RU
 
+###
+POST{{host}}/api/v1/private/create/page
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiZW1haWxAZ21haWwuY29tIiwic3ViIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjE3NDU0MDcxLCJleHAiOjE2MTc0NTc2NzF9.4fq1AQy3vvcTh9W-h8781tlRhfco-FRu1Fwtqffm1RU
+
+{
+
+  "title":"title",
+  "description":"description"
+
+}

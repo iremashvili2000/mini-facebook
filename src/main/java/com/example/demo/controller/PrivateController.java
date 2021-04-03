@@ -2,10 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
+import com.example.demo.models.Page;
 import com.example.demo.models.requests.*;
 import com.example.demo.models.response.SendRequest;
 import com.example.demo.models.user.*;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.PageService;
 import com.example.demo.service.Service;
 import com.example.demo.service.UserService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,11 +23,13 @@ public class PrivateController {
     private final UserRepository userRepository;
     private final UserService userService;
     private final Service service;
+    private final PageService pageService;
 
-    public PrivateController(UserRepository userRepository, UserService userService, Service service) {
+    public PrivateController(UserRepository userRepository, UserService userService, Service service, PageService pageService) {
         this.userRepository = userRepository;
         this.userService = userService;
         this.service = service;
+        this.pageService = pageService;
     }
 
 
@@ -152,6 +156,12 @@ public class PrivateController {
     public List<POST> seeProfile(@AuthenticationPrincipal UserDetails userDetails,@PathVariable(name="email")String email){
         User user=(User) userRepository.findByEmail(userDetails.getUsername());
        return userService.seeProfile(user,email);
+    }
+
+    @RequestMapping(value = "/create/page",method = RequestMethod.POST)
+    public Page createPost(@AuthenticationPrincipal UserDetails userDetails, @Valid @RequestBody CreatePage createPage){
+        User user=(User) userRepository.findByEmail(userDetails.getUsername());
+      return   pageService.createPage(user,createPage);
     }
 
 

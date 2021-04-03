@@ -2,6 +2,7 @@ package com.example.demo.models.user;
 
 import com.example.demo.models.Message;
 import com.example.demo.models.Notification;
+import com.example.demo.models.Page;
 import com.example.demo.models.father.Father;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
@@ -65,6 +66,10 @@ public class User extends Father implements UserDetails {
     @JsonIgnore
     private Useraddress address;
 
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Page> pageList;
+
     @OneToOne(
             mappedBy = "user",
             cascade = CascadeType.ALL,
@@ -92,6 +97,26 @@ public class User extends Father implements UserDetails {
  @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
  @JsonIgnore
  private List<User> friends;
+
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Page> pages;
+
+    public List<Page> getPageList() {
+        return pageList;
+    }
+
+    public void setPageList(List<Page> pageList) {
+        this.pageList = pageList;
+    }
+
+    public List<Page> getPages() {
+        return pages;
+    }
+
+    public void setPages(List<Page> pages) {
+        this.pages = pages;
+    }
 
     public List<POST> getPosts() {
         return Posts;

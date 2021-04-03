@@ -2,11 +2,13 @@ package com.example.demo.controller;
 
 import com.example.demo.exception.BadDataException;
 import com.example.demo.jwt.JwtTokenProvider;
+import com.example.demo.models.Page;
 import com.example.demo.models.requests.Login;
 import com.example.demo.models.requests.RegistrationUser;
 import com.example.demo.models.response.Token;
 import com.example.demo.models.user.User;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.PageService;
 import com.example.demo.service.Service;
 import com.example.demo.service.UserService;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,10 +18,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -33,14 +32,16 @@ public class OpenController {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final UserService userService;
+    private final PageService pageService;
 
-    public OpenController(Service service, BCryptPasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider, AuthenticationManager authenticationManager, UserRepository userRepository, UserService userService) {
+    public OpenController(Service service, BCryptPasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider, AuthenticationManager authenticationManager, UserRepository userRepository, UserService userService, PageService pageService) {
         this.service = service;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenProvider = jwtTokenProvider;
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.userService = userService;
+        this.pageService = pageService;
     }
 
 
@@ -77,6 +78,10 @@ public class OpenController {
             authorities.add(new SimpleGrantedAuthority(privilege));
         }
         return authorities;
+    }
+    @RequestMapping(value = "/api/v1/open/page/{name}",method = RequestMethod.POST)
+    public List<Page> findpages(@PathVariable(name="name")String pagename){
+      return  pageService.findPages(pagename);
     }
 
 
